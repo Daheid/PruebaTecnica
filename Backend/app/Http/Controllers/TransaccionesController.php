@@ -38,7 +38,6 @@ class TransaccionesController extends Controller
      */
     public function crear(Request $request)
     {
-        $datos = $request->all();
         try {
             $datosValidados = request()->validate([
                 'divisa_id' => 'required|exists:divisas,id',

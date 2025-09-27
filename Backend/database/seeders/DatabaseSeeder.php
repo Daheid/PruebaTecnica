@@ -15,10 +15,5 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(DivisaSeeder::class);
         $this->call(DocumentoSeeder::class);
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
     }
 }
