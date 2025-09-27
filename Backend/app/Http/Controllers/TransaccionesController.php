@@ -13,7 +13,25 @@ class TransaccionesController extends Controller
     /**
      * Funcion para obtener todas las transacciones.
      */
-    public function index() {}
+    public function index()
+    {
+        try {
+            $transacciones = Transaccion::with(['divisa', 'documento'])
+                ->orderBy('created_at', 'desc')
+                ->get();
+
+            return response()->json([
+                'operacion' => true,
+                'transacciones' => $transacciones,
+            ], Response::HTTP_OK);
+        } catch (\Exception $e) {
+            return response()->json([
+                'operacion' => false,
+                'mensaje' => 'Error al obtener las transacciones',
+                'error' => $e->getMessage()
+            ], Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
+    }
 
     /**
      * Funcion para crear nuevas transacciones.
@@ -37,11 +55,14 @@ class TransaccionesController extends Controller
 
             $transaccion = Transaccion::create($datosValidados);
             return response()->json([
-                'Operacion' => 'exitosa',
+                'operacion' => true,
                 'transaccion' => $transaccion
             ], Response::HTTP_CREATED);
         } catch (ValidationException $e) {
-            return response()->json(['errors' => $e->errors()], Response::HTTP_UNPROCESSABLE_ENTITY);
+            return response()->json([
+                'operacion' => false,
+                'errors' => $e->errors()
+            ], Response::HTTP_UNPROCESSABLE_ENTITY);
         }
     }
 }
