@@ -13,15 +13,16 @@ return new class extends Migration
     {
         Schema::create('transaccions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('divisa_id')->constrained('divisas')->onDelete('cascade');
+            $table->foreignId('divisa_id')->constrained('divisas')->onDelete('restrict');
             $table->decimal('monto', 15, 2);
             $table->string('descripcion');
             $table->string('nombre');
             $table->string('apellido');
-            $table->foreignId('documento_id')->constrained('documentos')->onDelete('cascade');
+            $table->foreignId('documento_id')->constrained('documentos')->onDelete('restrict');
+            $table->string('nro_documento');
             $table->string('nro_tarjeta');
-            $table->date('ano_vencimiento');
-            $table->string('mes_vencimiento');
+            $table->integer('ano_vencimiento');
+            $table->integer('mes_vencimiento');
             $table->timestamps();
         });
     }
