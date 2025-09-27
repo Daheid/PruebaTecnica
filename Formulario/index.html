@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Pago</title>
+    <link href="./css/tailwind.css" rel="stylesheet" />
+    <link href="./css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="p-4">
+      <div class="max-w-xl mx-auto bg-white">
+        <div
+          class="rounded-xl shadow-sm border border-gray-200 overflow-hidden"
+        >
+          <!----------- ENCABEZADO ----------->
+          <div class="bg-gradient-to-r from-purple-500 to-indigo-600 p-6">
+            <h2 class="text-xl font-semibold text-white">Formulario de Pago</h2>
+            <p class="text-sm text-slate-100 mt-2">
+              Procesamiento de pagos rápido y seguro
+            </p>
+          </div>
+
+          <div class="p-6">
+            <!----------- LOGO ----------->
+            <div
+              class="flex mb-6 border border-gray-300 rounded-md overflow-hidden"
+            >
+              <img src="assets/crosspay-solutions-logo-color.svg" alt="" />
+            </div>
+            <!----------- FORMULARIO DE PAGO ----------->
+            <form>
+              <!----------- INPUT DE NOMBRE Y APELLIDO ----------->
+              <div class="mb-4">
+                <label class="block text-slate-900 text-sm font-medium mb-2">
+                  Nombre y Apellido
+                </label>
+                <div class="grid grid-cols-2 gap-4">
+                  <div>
+                    <input
+                      type="text"
+                      id="Nombre"
+                      class="px-4 py-2.5 bg-white border border-gray-400 text-slate-900 w-full text-sm rounded-md focus:outline-indigo-600"
+                      placeholder="Nelson"
+                      required
+                      oninput="this.value = this.value.replace(/\s/g, '')"
+                    />
+                  </div>
+
+                  <div>
+                    <input
+                      type="text"
+                      id="apellido"
+                      class="px-4 py-2.5 bg-white border border-gray-400 text-slate-900 w-full text-sm rounded-md focus:outline-indigo-600"
+                      placeholder="Carrero"
+                      oninput="this.value = this.value.replace(/\s/g, '')"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!----------- INPUT DE NUMERO DE TARJETA ----------->
+              <div class="mb-4">
+                <label
+                  class="block text-slate-900 text-sm font-medium mb-2"
+                  for="tarjeta"
+                >
+                  Número de tarjeta
+                </label>
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="tarjeta"
+                    class="px-4 py-2.5 bg-white border border-gray-400 text-slate-900 w-full text-sm rounded-md focus:outline-indigo-600"
+                    placeholder="1234 5678 9012 3456"
+                    maxlength="19"
+                    oninput="formato(this)"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!----------- INPUT DE MM/YY y CVV ----------->
+              <div class="grid grid-cols-2 gap-4 mb-6">
+                <div>
+                  <label
+                    class="block text-slate-900 text-sm font-medium mb-2"
+                    for="fechaVen"
+                  >
+                    Fecha de vencimiento
+                  </label>
+                  <input
+                    type="text"
+                    id="fechaVen"
+                    class="px-4 py-2.5 bg-white border border-gray-400 text-slate-900 w-full text-sm rounded-md focus:outline-indigo-600"
+                    placeholder="MM/YY"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-slate-900 text-sm font-medium mb-2"
+                    for="cvv"
+                  >
+                    CVV
+                  </label>
+                  <input
+                    type="text"
+                    id="cvv"
+                    class="px-4 py-2.5 bg-white border border-gray-400 text-slate-900 w-full text-sm rounded-md focus:outline-indigo-600"
+                    placeholder="123"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!----------- INPUT DE monto y documento ----------->
+              <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="mb-4">
+                  <label
+                    class="block text-slate-900 text-sm font-medium mb-2"
+                    for="monto"
+                  >
+                    Monto
+                  </label>
+                  <div class="relative flex">
+                    <select
+                      id="divisa"
+                      class="w-24 bg-gray-100 border border-r-0 border-gray-400 text-slate-900 text-sm rounded-l-md focus:outline-none focus:ring-2 focus:ring-indigo-600 px-2 py-2.5"
+                    >
+                      <option value="USD">USD</option>
+                      <option value="COP">COP</option>
+                    </select>
+
+                    <input
+                      type="number"
+                      id="monto"
+                      class="flex-1 px-2 py-2.5 bg-white border border-gray-400 text-slate-900 text-sm rounded-r-md focus:outline-indigo-600"
+                      placeholder="0.00"
+                      onblur="Decimal(this)"
+                    />
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <label
+                    class="block text-slate-900 text-sm font-medium mb-2"
+                    for="documento"
+                  >
+                    Documento de identidad
+                  </label>
+                  <div class="relative flex">
+                    <select
+                      id="tipoDocumento"
+                      class="w-24 bg-gray-100 border border-r-0 border-gray-400 text-slate-900 text-sm rounded-l-md focus:outline-none focus:ring-2 focus:ring-indigo-600 px-2 py-2.5"
+                    >
+                      <option value="CI">CI</option>
+                      <option value="PP">PP</option>
+                    </select>
+
+                    <input
+                      type="text"
+                      id="documento"
+                      maxlength="20"
+                      oninput="this.value = this.value.replace(/[^\d]/g, '');"
+                      class="flex-1 px-2 py-2.5 bg-white border border-gray-400 text-slate-900 text-sm rounded-r-md focus:outline-indigo-600"
+                      placeholder="12345678"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!----------- Descripcion de pago ----------->
+              <div class="mb-4">
+                <label
+                  class="block text-slate-900 text-sm font-medium mb-2"
+                  for="descripcion"
+                >
+                  Descripcion de pago
+                </label>
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="descripcion"
+                    class="px-4 py-2.5 bg-white border border-gray-400 text-slate-900 w-full text-sm rounded-md focus:outline-indigo-600"
+                    placeholder="Pago de productos."
+                    maxlength="100"
+                    required
+                  />
+                </div>
+              </div>
+              <!----------- Terminos y condiciones ----------->
+              <div class="mb-6">
+                <div class="flex items-center">
+                  <input
+                    type="checkbox"
+                    id="saveCard"
+                    class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                    required
+                  />
+                  <label
+                    for="saveCard"
+                    class="ml-2 block text-sm text-slate-900 font-medium"
+                  >
+                    aceptar
+                    <a href="#" class="text-indigo-600 hover:text-indigo-500"
+                      >Terminos y condiciones
+                    </a>
+                  </label>
+                </div>
+              </div>
+
+              <!----------- Boton para pagar ----------->
+              <div class="flex flex-col space-y-4">
+                <button
+                  type="submit"
+                  class="cursor-pointer w-full py-2.5 px-4 rounded-md flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-sm text-white font-medium transition-colors"
+                >
+                  Pagar YA!
+                </button>
+                <div
+                  class="flex items-center justify-center text-slate-500 text-sm"
+                >
+                  <span>Seguridad de pago por PruebaTecnica.</span>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center gap-2 mt-4">
+        <img src="assets/visa.webp" class="w-12" alt="card1" />
+        <img src="assets/american_express.webp" class="w-12" alt="card2" />
+        <img src="assets/tarjeta_roja.webp" class="w-12" alt="card3" />
+      </div>
+    </div>
+    <div id="app"></div>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/inputNumeroTarjeta.js"></script>
+    <script src="./js/inputMonto.js"></script>
+  </body>
+</html>
