@@ -8,9 +8,11 @@ const transformarTransaccion = (transaccion) => {
     monto: parseFloat(transaccion.monto),
     descripcion: transaccion.descripcion,
     nombre: `${transaccion.nombre} ${transaccion.apellido}`,
-    tipoDeDocumento: transaccion.documento?.simbolo || "N/A",
+    tipoDeDocumento: `${transaccion.documento?.simbolo || "N/A"}. - ${
+      transaccion.nro_documento || "N/A"
+    }`,
+    nroDocumento: transaccion.nro_documento,
     fecha: new Date(transaccion.created_at).toLocaleDateString("es-ES"),
-    // Datos adicionales por si los necesitas
     datosCompletos: transaccion,
   }
 }
