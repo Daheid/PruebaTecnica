@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import Paginacion from "./paginacion"
-import { useTransacciones } from "../hooks/usetransacciones"
+import { useTransacciones } from "../hooks/useTransacciones"
 
 const ITEMS_PER_PAGE = 8
 
