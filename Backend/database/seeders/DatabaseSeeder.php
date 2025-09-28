@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(DivisaSeeder::class);
         $this->call(DocumentoSeeder::class);
+        $this->call(TransaccionesSeeder::class);
     }
 }
