@@ -6,7 +6,6 @@ import {
   Navigate,
 } from "react-router-dom"
 import LoginForm from "./components/loginFormulario"
-import Dashboard from "./components/Dashboard"
 import Navbar from "./components/navbar"
 import Tabla from "./components/tabla"
 
