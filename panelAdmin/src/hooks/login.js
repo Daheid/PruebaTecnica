@@ -38,7 +38,7 @@ export const Login = () => {
 
       if (response.ok) {
         localStorage.setItem("authToken", data.token)
-        localStorage.setItem("usuario", JSON.stringify(data.user))
+        localStorage.setItem("usuario", JSON.stringify(data.usuario))
 
         // Llamamos al callback de éxito
         if (onSuccess) onSuccess()

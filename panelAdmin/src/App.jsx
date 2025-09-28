@@ -8,6 +8,7 @@ import {
 } from "react-router-dom"
 import LoginForm from "./components/loginFormulario"
 import Dashboard from "./components/Dashboard"
+import Navbar from "./components/navbar"
 
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem("authToken")
@@ -30,7 +31,7 @@ function App() {
           path="/dashboard"
           element={
             <ProtectedRoute>
-              <Dashboard />
+              <Navbar />
             </ProtectedRoute>
           }
         />
