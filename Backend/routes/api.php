@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\divisasController;
+use App\Http\Controllers\documentosController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TransaccionesController;
 
@@ -16,3 +17,4 @@ Route::post('/auth/usuarios', [AuthController::class, 'login']);
 
 //obtener miselanios
 Route::get('/divisas', [divisasController::class, 'index']);
+Route::get('/documentos', [documentosController::class, 'index']);
