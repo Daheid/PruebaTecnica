@@ -1,7 +1,7 @@
 // hooks/useLogin.js
 import { useState } from "react"
 
-export const Login = () => {
+export const useLogin = () => {
   const [Datos, setFormData] = useState({
     nombre: "",
     password: "",

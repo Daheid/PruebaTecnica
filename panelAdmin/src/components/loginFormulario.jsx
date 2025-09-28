@@ -1,12 +1,11 @@
-// components/loginFormulario.jsx
 import React from "react"
 import { useNavigate } from "react-router-dom"
 import Logo from "../assets/logo.svg"
-import { Login } from "../hooks/login"
+import { useLogin } from "../hooks/uselogin"
 
 const LoginForm = () => {
   const navigate = useNavigate()
-  const { Datos, loading, error, handleChange, handleSubmit } = Login()
+  const { Datos, loading, error, handleChange, handleSubmit } = useLogin()
 
   // Función que se ejecuta cuando el login es exitoso
   const handleLoginSuccess = () => {

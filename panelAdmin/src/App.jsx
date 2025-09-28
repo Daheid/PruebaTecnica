@@ -1,4 +1,3 @@
-// App.jsx
 import React from "react"
 import {
   BrowserRouter as Router,
@@ -9,6 +8,7 @@ import {
 import LoginForm from "./components/loginFormulario"
 import Dashboard from "./components/Dashboard"
 import Navbar from "./components/navbar"
+import Tabla from "./components/tabla"
 
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem("authToken")
@@ -31,7 +31,15 @@ function App() {
           path="/dashboard"
           element={
             <ProtectedRoute>
-              <Navbar />
+              <div className="flex min-h-screen">
+                <Navbar />
+                <div className="flex-1 p-6">
+                  <h1 className="text-2xl font-bold mb-6">
+                    Tabla de transacciones
+                  </h1>
+                  <Tabla />
+                </div>
+              </div>
             </ProtectedRoute>
           }
         />
