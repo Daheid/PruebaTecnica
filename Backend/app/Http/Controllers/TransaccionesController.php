@@ -46,7 +46,7 @@ class TransaccionesController extends Controller
                 'nombre' => 'required|string|max:100',
                 'apellido' => 'required|string|max:100',
                 'documento_id' => 'required|exists:documentos,id',
-                'nro_documento' => 'required|string|max:16',
+                'nro_documento' => 'required|string|max:20',
                 'nro_tarjeta' => 'required|string|max:20',
                 'ano_vencimiento' => 'required|',
                 'mes_vencimiento' => 'required|',
