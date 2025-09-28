@@ -1,3 +1,42 @@
+# Prueba tecnica
+
+El siguiente proyecto esta creado con distintas tecnologias y una arquitectura `JamStack` para separar las responsabilidades de las tres partes. Se usaron PHP, Laravel, JavaScript, Tailwind, HTML, React y PostgreSQL para cumplir con los requerimientos pautados.
+
+Para probar el proyecto en la web:
+
+- Formulario la puedes encontrar en `pruebatecnica.nelsoncarrero.dev`
+- Backend la puedes encontrar en `api.pruebatecnica.nelsoncarrero.dev`
+- panelAdmin la puedes encontrar en `admin.pruebatecnica.nelsoncarrero.dev`
+
+## Feedback
+
+Las secciones de `Backend, Formulario y panelAdmin` estan iguales en sus respectiva carpetas, en esta documentacion se agregan las tres.
+
+## FAQ
+
+#### Porque se uso ese Stack?
+
+Para el Backend se eligio Laravel por su flexibilidad y velocidad para desarrollar APIs en poco tiempo, junto a los conocimientos que ya tengo fueron dos factores descisivos.
+
+Para la base de datos se decidio PostgreSQL porque ya estaba preparado en el VPS donde se desplego el proyecto y me parecia un ahorro de tiempo, a parte, de su gran compatibilidad con Laravel.
+
+Para el Formulario se usaron html5, Tailwind CSS y JavaScript sin Frameworks ya que al ser unicamente un formulario me parecia que no era necesario el uso de frameworks y se podia desarrollar en buen tiempo con el stack elegido.
+
+Para panelAdmin se uso React, Tailwind CSS y JavaScript
+por su velocidad de desarrollo para un sistema de Login>Dashboard con autenticacion>consumo de API, ademas, En la entrevista le comente al SR. Edison que no habia usado nunca React solo Livewire que es parecido y me parecio una buena oportunidad para usarlo.
+
+#### Si tuvieras mas tiempo que mejorarias
+
+- Agregar una pestaña para agregar Divisas y tipos de Documentos nuevos.
+
+- Agregaria un boton para descargar en PDF las transacciones juntas o individuales.
+
+- Mejoraria el stack de trabajo.
+
+- Optimizacion de la Base de datos.
+
+- Realizaria testing para validar el funcionamiento del codigo.
+
 # Backend
 
 La siguiente API REST esta creada usando Laravel y PostgreSQL con uso de los tokens Sanctum, sus distintos endpoints estan creados para cubrir los requerimientos pautados.
@@ -123,9 +162,91 @@ Para correr el proyecto, debe agregar el valor correspondiente a las siguientes 
 `DB_USERNAME=`
 `DB_PASSWORD=`
 
+
+# panelAdmin
+
+El siguiente panel esta creado con React, Tailwind y Javascript con los requerimientos pautados.
+
+## Correr en Local
+
+Para desplegar esta panel en local debes tener en su equipo la API de PruebaTecnica/Backend corriendo para que le cargen los datos y Nodejs 24.9 y npm 11.6.
+
+Clone el repositorio
+
+```bash
+  https://github.com/Daheid/PruebaTecnica.git
+````
+
+Entre a la carpeta de panelAdmin
+
+```bash
+  cd PruebaTecnica/panelAdmin
+```
+
+Instale el proyecto
+
+```bash
+  npm install
+```
+
+cree el archivo .env (configure las variables de entorno)
+
+```bash
+  mkdir .env
+```
+
+haga una build del proyecto
+
+```bash
+  npm run build
+```
+
+inicie el servidor
+
+```bash
+  npm run dev
+```
+
+## variables de entorno
+
+Para correr el proyecto, debe agregar el valor correspondiente a las siguientes variables.
+
+`VITE_API_URL`
+
+# Formulario
+
+El siguiente Formulario esta creado con JavaScript, Tailwind y HTML con los requerimientos pautados.
+
+## Correr en Local
+
+Para desplegar esta Formulario en local debe tener en su equipo la API de PruebaTecnica/Backend corriendo para que le cargen los datos y un navegador actualizado.
+
+Clone el repositorio
+
+```bash
+  https://github.com/Daheid/PruebaTecnica.git
+```
+
+Entre a la carpeta de Formulario
+
+```bash
+  cd PruebaTecnica/Formulario
+```
+
+Abra el archivo index.html
+
+```bash
+  index.html
+```
+
+## FAQ
+
+#### Es necesario correr la API?
+
+No, ya que los links que se usan en el formularios estan conectados a la version de la api en la web `api.pruebatecnica.nelsoncarrero.dev`
+
 ## 🔗 Links
 
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://www.nelsoncarrero.dev/)
 
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nelson-carrero-96b984202/)
-````

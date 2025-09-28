@@ -1,16 +1,55 @@
-# React + Vite
+# panelAdmin
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+El siguiente panel esta creado con React, Tailwind y Javascript con los requerimientos pautados.
 
-Currently, two official plugins are available:
+## Correr en Local
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Para desplegar esta panel en local debes tener en su equipo la API de PruebaTecnica/Backend corriendo para que le cargen los datos y Nodejs 24.9 y npm 11.6.
 
-## React Compiler
+Clone el repositorio
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+  https://github.com/Daheid/PruebaTecnica.git
+```
 
-## Expanding the ESLint configuration
+Entre a la carpeta de panelAdmin
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+  cd PruebaTecnica/panelAdmin
+```
+
+Instale el proyecto
+
+```bash
+  npm install
+```
+
+cree el archivo .env (configure las variables de entorno)
+
+```bash
+  mkdir .env
+```
+
+haga una build del proyecto
+
+```bash
+  npm run build
+```
+
+inicie el servidor
+
+```bash
+  npm run dev
+```
+
+## variables de entorno
+
+Para correr el proyecto, debe agregar el valor correspondiente a las siguientes variables.
+
+`VITE_API_URL`# Formulario
+
+## 🔗 Links
+
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://www.nelsoncarrero.dev/)
+
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nelson-carrero-96b984202/)
