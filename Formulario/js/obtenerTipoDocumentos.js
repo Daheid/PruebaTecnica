@@ -2,7 +2,9 @@ async function cargarDocumentos() {
   const select = document.getElementById("tipoDocumento")
 
   try {
-    const response = await fetch("http://127.0.0.1:8000/api/v1/documentos")
+    const response = await fetch(
+      "https://api.pruebatecnica.nelsoncarrero.dev/api/v1/documentos"
+    )
 
     if (!response.ok) {
       throw new Error(`Error: ${response.status}`)

@@ -51,7 +51,7 @@ async function enviarFormulario(event) {
 
     // Enviar datos al endpoint
     const respuesta = await fetch(
-      "http://127.0.0.1:8000/api/v1/transacciones",
+      "https://api.pruebatecnica.nelsoncarrero.dev/api/v1/transacciones",
       {
         method: "POST",
         headers: {

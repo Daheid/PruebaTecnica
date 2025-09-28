@@ -2,7 +2,9 @@ async function cargarDivisas() {
   const select = document.getElementById("divisa")
 
   try {
-    const response = await fetch("http://127.0.0.1:8000/api/v1/divisas")
+    const response = await fetch(
+      "https://api.pruebatecnica.nelsoncarrero.dev/api/v1/divisas"
+    )
 
     if (!response.ok) {
       throw new Error(`Error: ${response.status}`)
