@@ -4,7 +4,7 @@ La siguiente API REST esta creada usando Laravel y PostgreSQL con uso de los tok
 
 ## Endpoints
 
-Los puede probar usando Postman (el archivo esta en Backend/postman) o ingresando a `pruebatecnica.nelsoncarrero.dev` y para el panel de administrador `admin.pruebatecnica.nelsoncarrero.dev`
+Los puede probar usando Postman (el archivo esta en PruebaTecnica/prueba tecnica.postman_collection.json) o ingresando a `pruebatecnica.nelsoncarrero.dev` y para el panel de administrador `admin.pruebatecnica.nelsoncarrero.dev`
 
 #### Obtener todos los tipos de documentos
 

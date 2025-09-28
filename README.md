@@ -2,7 +2,7 @@
 
 El siguiente proyecto esta creado con distintas tecnologias y una arquitectura `JamStack` para separar las responsabilidades de las tres partes. Se usaron PHP, Laravel, JavaScript, Tailwind, HTML, React y PostgreSQL para cumplir con los requerimientos pautados.
 
-Para probar el proyecto en la web:
+Para probar el proyecto en la web en VPS Personal:
 
 - Formulario la puedes encontrar en `pruebatecnica.nelsoncarrero.dev`
 - Backend la puedes encontrar en `api.pruebatecnica.nelsoncarrero.dev`
@@ -37,13 +37,15 @@ por su velocidad de desarrollo para un sistema de Login>Dashboard con autenticac
 
 - Realizaria testing para validar el funcionamiento del codigo.
 
+- El responsive del panel de administrador.
+
 # Backend
 
 La siguiente API REST esta creada usando Laravel y PostgreSQL con uso de los tokens Sanctum, sus distintos endpoints estan creados para cubrir los requerimientos pautados.
 
 ## Endpoints
 
-Los puede probar usando Postman (el archivo esta en Backend/postman) o ingresando a `pruebatecnica.nelsoncarrero.dev` y para el panel de administrador `admin.pruebatecnica.nelsoncarrero.dev`
+Los puede probar usando Postman (el archivo esta en PruebaTecnica/prueba tecnica.postman_collection.json) o ingresando a `pruebatecnica.nelsoncarrero.dev` y para el panel de administrador `admin.pruebatecnica.nelsoncarrero.dev`
 
 #### Obtener todos los tipos de documentos
 
@@ -163,7 +165,7 @@ Para correr el proyecto, debe agregar el valor correspondiente a las siguientes 
 `DB_PASSWORD=`
 
 
-# panelAdmin
+## panelAdmin
 
 El siguiente panel esta creado con React, Tailwind y Javascript con los requerimientos pautados.
 
